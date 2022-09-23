@@ -1,0 +1,95 @@
+*, html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: rgb(255, 248, 240);
+    width: 100%;
+    height: auto;
+}
+
+.wrap {
+    background-color: rgb(95, 95, 95);
+    height: 50px;
+}
+
+.Nama {
+   color: white;
+   padding: 6px;
+}
+
+.card {
+    background-color: rgb(204, 204, 204);
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    margin-left: 15px;
+    width: 400px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px 2px  rgb(80, 80, 80);
+    display: flex;
+    flex-direction: column;
+}
+
+.isi p {
+    color: rgb(0, 0, 0);
+    font-weight: 700px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 16px;
+}
+
+.isi h4 {
+    color: rgb(0, 0, 0);
+    font-weight: 700px;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 16px;
+}
+
+.tombol button {
+    border-style: none;
+    height: 30px;
+    width: 50px;
+    border-radius: 7px;
+    background-color: rgb(149, 149, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 170px;
+    margin-top: 20px;
+}
+
+.tombol a {
+    text-decoration: none;
+    color: white;
+}
+
+.tombol button:hover {
+    background-color: blue;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+
+@media screen and (max-width: 991px){
+    .card {
+        width: 280px;
+        height: 220px;
+    }
+
+    .container {
+        height: auto;
+        background-color: black;
+    }
+
+    .tombol button {
+        margin-left: 99px;
+    }
+    
+}
+
+
+
+
+

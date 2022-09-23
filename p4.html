@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pelajaran 4</title>
+    <link rel="stylesheet" href="p4.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="judul1">
+                <h1>Cara menghidupkan LED dengan sensor ultrasonic</h1>
+            </div>
+        </div>
+        <br>
+        <div class="isi">
+            <p>Cara kerja sensor ultrasonic, sebuah sinyal pulsa dengan durasi setidaknya 10 μS (10 mikrodetik)
+                diterapkan ke pin Trigger. Setelah
+                itu, sensor mentransmisikan gelombang ultrasonik delapan pulsa pada frekuensi 40 KHz. Pola 8-pulsa ini
+                digunakan untuk sebuah penanda sinyal ultrasonik dari modul ini, yang memungkinkan receiver / penerima
+                untuk membedakan pola yang ditransmisikan dari kebisingan ultrasonik sekitar.</p>
+            <br>
+            <p>Delapan pulsa ultrasonik bergerak melalui udara menjauh dari transmitter / pemancar mengarah ke benda
+                atau obyek yang ada di depannya. Sementara itu pin Echo menjadi HIGH / TINGGI untuk mulai membentuk awal
+                sinyal gema</p>
+            <br>
+            <p>Jika tidak ada sinyal ultrasonik yang dipantulkan atau diterima oleh receiver selama rentang 38 mS (mili
+                detik), yang artinya tidak ada obyek atau benda maka sinyal Echo akan Timeout dan kembali menjadi LOW /
+                RENDAH.</p>
+            <br>
+            <p>Sedangkan jika ada sinyal ultrasonik yang dipantulkan atau diterima oleh receiver, maka saat itu juga
+                sinyal Echo langsung berubah menjadi LOW / RENDAH. Nah, lebar rentang waktu dari sinyal ECHO inilah yang
+                digunakan untuk mengukur jarak antara sensor dengan obyek atau benda.</p>
+            <br>
+            <p>Sensor HC-SR04 memiliki spesifikasi sebagai berikut :</p>
+            <br>
+            <p>-Tegangan : 5V DC/p>
+                <br>
+            <p>-Arus statis : < 2mA</p>
+                    <p>-Level output : 5v – 0V</p>
+                    <p>-Sudut sensor : < 15 derajat</p>
+                            <p>-Jarak yg bisa dideteksi : 2cm – 450cm (4.5m)</p>
+                            <p>-Tingkat keakuratan : up to 0.3cm (3mm) </p>
+                            <br>
+                            <p>Fungsi sensor ultrasonik HC-SR04 biasa digunakan untuk mendeteksi objek yang ada di
+                                depannya dengan memanfaatkan gelombang ultrasonik.</p>
+                            <br>
+                            <p>Datasheet Sensor Ultrasonik HC-SR04 :</p>
+                            <p>1.Pin Trig (Trigger), trigpin Arduino berfungsi untuk memicu pemancaran gelombang
+                                ultrasonik. Gelombang akan terpancarkan saat pin ini diberikan logika HIGH.</p>
+                            <br>
+                            <p>2.Pin Echo, berfungsi untuk mendeteksi pantulan gelombang ultrasonik apakah sudah
+                                diterima
+                                atau belum. Pin Echo bernilai HIGH jika gelombang pantulan belum diterima dan bernilai
+                                LOW jika pantulan sudah diterima.</p>
+                            <br>
+                            <p>3.Pin VCC, berfungsi untuk mengoneksikan sensor ke power supply 5 volt Arduino. Jadi kamu
+                                bisa langsung mengoneksikan pin VCC ke pin 5V di Arduino.</p>
+                            <br>
+                            <p>4.Pin GND, berfungsi untuk mengoneksikan sensor ke power supply ground. Sama dengan pin
+                                VCC, kamu juga bisa langsung menghubungkan pin GND ini ke pin GND Arduino.</p>
+                            <br>
+                            <p>Komponen Sensor Ultrasonik HC-SR04 :</p>
+                            <br>
+                            <p>1.Piezoelektrik</p>
+                            <p>Fungsi dari komponen ini adalah mengubah energi listrik menjadi energi mekanik yang
+                                menghasilkan gelombang ultrasonik maupun sebaliknya.</p>
+                            <br>
+                            <p>2.Transmitter</p>
+                            <p>Yaitu komponen yang berfungsi untuk memancarkan gelombang ultrasonik yang dihasilkan oleh
+                                piezoelektrik ke objek yang ingin diukur jaraknya</p>
+                            <br>
+                            <p>3.Receiver</p>
+                            <p>Berfungsi untuk menerima pantulan gelombang ultrasonik dari objek yang ingin diukur
+                                jaraknya.</p>
+                            <br>
+                            <p>Berikut rangkaian di tinkercad :</p>
+                            <br>
+                            <img src="Incredible Bruticus-Gaaris.png" />
+                            <br>
+                            <br>
+                            <div class="card">
+                                <div class="code">
+                                    <p>#define echoPin 2 //Echo Pin </p>
+                                    <p>#define trigPin 3 //Trigger Pin </p>
+                                    <p>#define LED1 13 //Led </p>
+                                    <br>
+                                    <p>long duration; //waktu untuk kalkulasi jarak</p>
+                                    <p>distance;</p>
+                                    <br>
+                                    <p>void setup() {</p>
+                                    <br>
+                                    <p>Serial.begin (9600); //inisialiasasi komunikasi serial
+                                        //deklarasi pin</p>
+                                    <br>
+                                    <p> pinMode(trigPin, OUTPUT);</p>
+                                    <p>pinMode(echoPin, INPUT);</p>
+                                    <p>pinMode(LED1, OUTPUT);
+                                        }</p>
+                                    <br>
+                                    <p>void loop() {</p>
+                                    <p> /* Berikut siklus trigPin atau echo pin yang digunakan
+                                        untuk menentukan jarak objek terdekat dengan memantulkan
+                                        gelombang suara dari itu. */</p>
+                                    <p>digitalWrite(trigPin, LOW);delayMicroseconds(2);</p>
+                                    <p> digitalWrite(trigPin, HIGH);delayMicroseconds(10);</p>
+                                    <p>digitalWrite(trigPin, LOW);</p>
+                                    <p>duration = pulseIn(echoPin, HIGH);</p>
+                                    <br>
+                                    <p>//perhitungan untuk dijadikan jarak
+                                        distance = duration / 0.034;</p>
+                                    <br>
+                                    <p>if(distance >= 400){//jik jarak lebih dari 400cm maka lampu mati</p>
+                                    <p>Serial.println("aman");</p>
+                                    <p> digitalWrite(LED1, LOW);</p>
+                                    <p>}</p>
+                                    <br>
+                                    <p>else if(distance <= 399){</p>
+                                            <p>Serial.println("rintangan");//jika jarak kurang dari 399cm lampu hidup
+                                            </p>
+                                            <p>digitalWrite(LED1, HIGH);</p>
+                                            <p>}</p>
+                                            <p>}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="kembali">
+                                <button>
+                                    <a href="index.html">
+                                        <p>Kembali</p>
+                                    </a>
+                                </button>
+                            </div>
+                            <br>
+                            <audio controls>
+                                <source src="y2mate.com - Lil Nas X  SUN GOES DOWN Official Video.mp3"
+                                    type="audio/mpeg">
+                                Browsermu tidak mendukung tag audio, upgrade donk!
+                            </audio>
+        </div>
+        <br>
+    </div>
+
+</body>
+
+</html>

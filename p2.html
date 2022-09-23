@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelajaran 2</title>
+    <link rel="stylesheet" href="p2.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="judul1">
+                <h1>Cara menghidupkan LED dengan Arduino</h1>
+            </div>
+        </div>
+        <br>
+        <div class="isi">
+            <p>Servo adalah komponen yang berupa motor yang memiliki sistem feedback guna memberi info posisi putaran
+                motor aktual yang diteruskan ke mikrokontroler.Servo ada 2 yaitu :</p>
+            <br>
+            <p>-standart</p>
+            <p>standart hanya bisa 180 derajat dan sering digunakan untuk lengan robot</p>
+            <br>
+            <p>-continous</p>
+            <p>servo ini dapat berputar 360 derajat dan biasa digunakan pada mobil robot</p>
+            <br>
+            <p>Servo memiliki 3 kabel yaitu VCC, GND dan signal.Motor servo termasuk jenis motor listrik yang memakai
+                sistem closed loop.Berikut ini komponen servo</p>
+            <br>
+            <p>-Motor dc kecil</p>
+            <p>Motor dc kecil memiliki dinamo yang berputar pada medan magnet yaitu kutub utara dan selatan dimana nanti
+                magnet akan berganti lokasi</p>
+            <br>
+            <p>-rangkaian kontrol</p>
+            <p>berfungsi untuk mengendalikan sebuah peralatan atau mesin listrik, rangkaian tersebut juga bisa
+                dijelaskan sebagai rangkaian yang mana motor bisa dikendalikan secara sekaligus dan urut</p>
+            <br>
+            <p>-commutator</p>
+            <p>konverter mekanik yang ada pada motor yang berguna menyelaraskan arah aliran listrik AC menuju DC.dengan
+                begitu tetap mengalir di arah yang gsama walaupun lilitan medan berada dalam keadaan yang berputar.</p>
+            <br>
+            <p>Berikut merk servo yang sering digunakan :</p>
+            <p>-SG90s</p>
+            <p>-MG90s</p>
+            <p>-MG995</p>
+            <br>
+            <p>Berikut rangkaian servo dalam tinkercad :</p>
+            <br>
+            <img src="Tremendous Fulffy.png" />
+            <br>
+            <br>
+            <div class="card">
+                <div class="code">
+                    <p>#include Servo.h //library servo di bagian Servo.h jangan lupa pakai buka dan tutup siku <>
+                    </p>
+                    <br>
+                    <p>Servo mimi; // membuat variabel servo untuk dikendalikan</p>
+                    <br>
+                    <p>int Mimi = 10;//memberi nama ke pin 10</p>
+                    <br>
+                    <p>void setup() {</p>
+                    <br>
+                    <p> mimi.attach(Mimi);</p>
+                    <p>}</p>
+                    <p>void loop(){</p>
+                    <br>
+                    <p> mimi.write(360);//putar 360 derajat</p>
+                    <p> delay (2000);//delay 2 detik</p>
+                    <p>mimi.write(0);//kembali ke 0 derajat</p>
+                    <p> delay(1000);//delay 1 detik</p>
+                    <p>}</p>
+                </div>
+            </div>
+            <br>
+            <div class="kembali">
+                <button>
+                    <a href="index.html">
+                        <p>Kembali</p>
+                    </a>
+                </button>
+            </div>
+            <br>
+            <audio controls>
+                <source src="y2mate.com - Aidan Bissett  More Than Friends Audio.mp3" type="audio/mpeg">
+                Browsermu tidak mendukung tag audio, upgrade donk!
+              </audio>
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>
