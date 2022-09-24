@@ -4,7 +4,7 @@
 }
 
 .container {
-    background-color: rgb(255, 248, 240);
+    background-color: rgb(180, 180, 180);
     width: 100%;
     height: auto;
 }
@@ -12,6 +12,10 @@
 .wrapper h4 {
     flex-direction: row;
     display: flex;
+}
+
+.kembali {
+    margin-left: 5px;
 }
 
 .judul1 {
@@ -33,6 +37,7 @@ img {
     color: white;
     border-radius: 8px;
     padding: 5px;
+    margin-left: 5px;
 }
 
 button {
@@ -56,11 +61,12 @@ button:hover {
 
 @media screen and (max-width: 991px) {
     img {
-        width: 20em;
+        width: 16em;
     }
 
     .card {
         width: 340px;
+        margin-left: 3px;
     }
 
     .judul1 {

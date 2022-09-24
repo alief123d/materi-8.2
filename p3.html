@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p3</title>
+    <link rel="stylesheet" href="p3.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="judul1">
+                <h1>Cara menghidupkan LED dengan tombol dan fungsi serial</h1>
+            </div>
+        </div>
+        <br>
+        <div class="isi">
+            <p>Serial.begin(nilai baudrate)</p>
+            <p>Serial.begin digunakan untuk menentukan kecepatan dan penerimaan data melalui port serial. Kecepatan
+                yang umumnya digunakan adalah 9600 bit per detik (9600 bps).</p>
+            <br>
+            <p>Serial.print(data)</p>
+            <p>Serial.print digunakan untuk mengirimkan data ke port serial. Jika datanya kita masukkan ke port serial,
+                maka yang dikirim akan menyesuaikan format tersebut. Dalam hal ini, format yang digunakan bisa berupa
+                bilangan, character, string.
+            </p>
+            <br>
+            <p>Serial.println(data)</p>
+            <p>Seria.println memiliki fungsi yang hampir sama dengan serial print. Bedanya, setelah data dicetak,
+                selanjutnya data akan di print di garis baru dan letaknya dibawah data terakhir (seperti newline).</p>
+            <br>
+            <p>cara melihat hasil serial begin adalah menggunakan serial monitor.Serial Monitor merupakan alat yang
+                dapat bekerja mengirim dan menerima data serial. Pertukaran data ini terjadi melalui kabel USB yang
+                biasa kita gunakan untuk proses upload sketch dari laptop/PC ke Arduino.</p>
+            <br>
+            <p>Selanjut nya adalah push button</p>
+            <br>
+            <p>push button adalah perangkat / saklar sederhana yang berfungsi untuk menghubungkan atau memutuskan aliran
+                arus
+                listrik dengan sistem kerja tekan unlock (tidak mengunci). Sistem kerja unlock disini berarti saklar
+                akan bekerja sebagai device penghubung atau pemutus aliran arus listrik saat tombol ditekan, dan saat
+                tombol tidak ditekan (dilepas), maka saklar akan kembali pada kondisi normal.</p>
+            <br>
+            <p>Sebagai device penghubung atau pemutus, push button switch hanya memiliki 2 kondisi, yaitu On dan Off (1
+                dan 0). Istilah On dan Off ini menjadi sangat penting karena semua perangkat listrik yang memerlukan
+                sumber energi listrik pasti membutuhkan kondisi On dan Off.</p>
+            <p>Karena sistem kerjanya yang unlock dan langsung berhubungan dengan operator, push button switch menjadi
+                device paling utama yang biasa digunakan untuk memulai dan mengakhiri kerja mesin di industri. Secanggih
+                apapun sebuah mesin bisa dipastikan sistem kerjanya tidak terlepas dari keberadaan sebuah saklar seperti
+                push button switch atau perangkat lain yang sejenis yang bekerja mengatur pengkondisian On dan Off.</p>
+            <br>
+            <p>Berdasarkan fungsi kerjanya yang menghubungkan dan memutuskan, push button switch mempunyai 2 tipe kontak
+                yaitu NC (Normally Close) dan NO (Normally Open).</p>
+            <br>
+            <p>NO (Normally Open)</p>
+            <p>merupakan kontak terminal dimana kondisi normalnya terbuka (aliran arus listrik tidak mengalir). Dan
+                ketika tombol saklar ditekan, kontak yang NO ini akan menjadi menutup (Close) dan mengalirkan atau
+                menghubungkan arus listrik. Kontak NO digunakan sebagai penghubung atau menyalakan sistem circuit (Push
+                Button ON).</p>
+            <br>
+            <p>NC (Normally Close)</p>
+            <p>merupakan kontak terminal dimana kondisi normalnya tertutup (mengalirkan arus litrik). Dan ketika tombol
+                saklar push button ditekan, kontak NC ini akan menjadi membuka (Open), sehingga memutus aliran arus
+                listrik. Kontak NC digunakan sebagai pemutus atau mematikan sistem circuit (Push Button Off).</p>
+            <br>
+            <p>Berikut rangkaian push button dalam tinkercad :</p>
+            <br>
+
+        </div>
+        <img src="Swanky Elzing-Albar (1).png" />
+        <br>
+        <br>
+        <div class="card">
+            <div class="code">
+                <p>int Nopri;//wadah </p>
+                <p>int alief = 2;//tombol </p>
+                <p> int Roni = 8;//lampu </p>
+                <br>
+                <p>void setup(){</p>
+                <br>
+                <p>Serial.begin(9600);//menentukan kecepatan dan penerimaan data melalui port serial</p>
+                <p> pinMode(alief, INPUT);//membuat tombol sbg input</p>
+                <p>pinMode(Roni, OUTPUT);//membuat lampu sbg output</p>
+                <p>}</p>
+                <br>
+                <p> void loop(){</p>
+                <br>
+                <p>Nopri = digitalRead(alief);//untuk membaca nilai alief</p>
+                <p>Serial.println(Nopri);//menuliskan isi wadah nopri ke serial monitor</p>
+                <br>
+                <p>if (Nopri == 1){ //if adalah jika</p>
+                <p> digitalWrite(Roni, HIGH);//jika nopri bernilai 1 maka roni hidup
+                    }</p>
+                <br>
+                <p>else //else adalah apabila</p>
+                <p> {</p>
+                <p> digitalWrite(Roni, LOW);//jika nilai nya selain satu maka roni mati(bkn mati masuk kubur)</p>
+                <p>}</p>
+                <p>}</p>
+            </div>
+        </div>
+        <br>
+        <div class="kembali">
+            <button>
+                <a
+                    href="https://www.tinkercad.com/things/0wSO2wNIIOe-swanky-elzing-albar/editel?sharecode=unnA-NkJwklCXRntCXlgbwYePLLOLBnmzB6PxV9wMfY">
+                    <p>tinkercad</p>
+                </a>
+            </button>
+        </div>
+        <br>
+        <div class="kembali">
+            <button>
+                <a href="index.html">
+                    <p>Kembali</p>
+                </a>
+            </button>
+        </div>
+        <br>
+        <br>
+        <audio controls>
+            <source src="y2mate.com - Aidan Bissett  More Than Friends Audio.mp3" type="audio/mpeg">
+            Browsermu tidak mendukung tag audio, upgrade donk!
+        </audio>
+        <br>
+    </div>
+</body>
+
+</html>
