@@ -18,6 +18,11 @@
     padding: 30px 400px;
 }
 
+.code img {
+    width: 40em;
+}
+
+
 .isi {
     margin-left: 10px;
     font-size: 1.2em;
@@ -62,6 +67,10 @@ button:hover {
 @media screen and (max-width: 991px) {
     img {
         width: 16em;
+    }
+
+    .code img {
+        width: 22.9em;
     }
 
     .card {

@@ -23,6 +23,11 @@
     font-size: 1.2em;
 }
 
+.code img {
+    width: 50em;
+}
+
+
 .kembali {
     margin-left: 5px;
 }
@@ -71,5 +76,9 @@ button:hover {
 
     .judul1 {
         padding-left: 10px;
+    }
+
+    .code img {
+        width: 22.9em;
     }
 }

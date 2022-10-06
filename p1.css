@@ -14,10 +14,6 @@
     display: flex;
 }
 
-.kembali {
-    margin-left: 5px;
-}
-
 .judul1 {
     padding: 30px 400px;
 }
@@ -27,18 +23,19 @@
     font-size: 1.2em;
 }
 
+.kembali {
+    margin-left: 5px;
+}
+
 img {
     width: 50em;
 }
 
-.card {
-    background-color: rgb(143, 143, 143);
-    width: 650px;
-    color: white;
-    border-radius: 8px;
-    padding: 5px;
-    margin-left: 5px;
+.code img {
+    width: 40em;
 }
+
+
 
 button {
     border-style: none;
@@ -65,7 +62,7 @@ button:hover {
     }
 
     .code img {
-        width: 23.9em;
+        width: 22.9em;
     }
 
     .card {
